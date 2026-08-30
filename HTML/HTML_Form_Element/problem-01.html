@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Space Research & Technology Institute (SRTI)</title></head>
+    <body>
+        <h1>Space Research & Technology Institute (SRTI)</h1>
+        <br>
+        <p>Welcome to the Undergraduate & Postgraduate Admission Portal for the Academic Session 2026-2027. Please fill out all relevant sections with accurate demographic and academic records. Fields marked with an asterisk (*) are strictly mandatory. </p>
+        <br>
+        <br>
+        <img src="https://campuspro.co.in/collage-image/1748857603_row_139.jpg" alt="SRTI University Campus Building">
+        <br>
+        <hr>
+        <form>
+            <h2>Personal Profile</h2>
+            <br>
+            <label for="Name">Full Name (as per High School Certificate) *:</label>
+            <input type="text" name="Name" id="Name" placeholder="Name" minlength="4" maxlength="50" required>
+            <br>
+            <br>
+            <label for="DOB">Date of Birth *:</label>
+            <input type="date" name="DOB" id="DOB" placeholder="DOB" required>
+            <br>
+            <br>
+            <label for="Gender">Gender:</label>
+            <br>
+            <br>
+            <label for="Male">Male</label>
+            <input type="radio" name="Gender" id="Male" value="Male">
+            <br>
+            <label for="Female">Female</label>
+            <input type="radio" name="Gender" id="Female" value="Female">
+            <br>
+            <label for="Other">Other</label>
+            <input type="radio" name="Gender" id="Other" value="Other">
+            <br>
+            <br>
+            <label for="Category">Admission Category *:</label>
+            <select id="Category" name="Category">
+                <option value="" id="Category" required>Choose Category</option>
+                <option value="General" id="Category">General</option>
+                <option value="OBC" id="Category" required>OBC</option>
+                <option value="SC" id="Category" required>SC</option>
+                <option value="ST" id="Category" required>ST</option>
+                <option value="EWS" id="Category" required>EWS</option>
+            </select>
+            <br>
+            <br>
+            <h2>Communication & Security</h2>
+            <br>
+            <label for="Email">Primary Email Address*:</label>
+            <input type="email" placeholder="Email" id="Email" name="Email" required>
+            <br>
+            <br>
+            <label for="Mobile Number">Mobile*:</label>
+            <input type="tel" pattern="[0-9]{10}" maxlength="10" placeholder="Mobile No." id="Mobile Number" Name="Mobile no." required>
+            <br>
+            <br>
+            <label for="PIN">6-Digit Security Application PIN *:</label>
+            <input type="password" id="PIN" name="PIN" placeholder="password" pattern="[0-9]{6}" maxlength="6" required>
+            <br>
+            <br>
+            <label for="Address">Complete Permanent Address *:</label>
+            <br>
+            <textarea rows="5" cols="60" placeholder="House No, Street, City, State, Pincode" id="Address" name="Address" required></textarea>
+            <br>
+            <br>
+            <h2>Academic & Course Preferences</h2>
+            <br>
+            <label for="Academic Program">Target Academic Program *:</label>
+            <select name="Academic Program" id="Academic Program" required>
+                <option value="Btech Aero Space">Btech Aero Space</option>
+                <option value="Btech Cse Ai">Btech Cse AI</option>
+                <option value="B.Sc. in Astrophysics & Space Sciences">B.Sc. in Astrophysics & Space Sciences</option>
+                <option value="B.Sc. in Data Analytics">B.Sc. in Data Analytics</option>
+                <option value="M.Tech in Satellite Communications">M.Tech in Satellite Communications</option>
+                <option value="M.Sc. in Computational Physics">M.Sc. in Computational Physics</option>
+            </select>
+            <br>
+            <br>
+            <label for="Academic Qualification">Highest Qualifying Examination Passed *:</label>
+            <input type="text" id="Academic Qualification" name="Academic Qualification" placeholder="e.g., Central Board Class 12, Diploma" required>
+            <br>
+            <br>
+            <label for="Institution">Name of Last Attended Institution *:</label>
+            <input type="text" placeholder="Kendriya Vidyalaya No. 1" id="Institution" name="Institute" required>
+            <br>
+            <br>
+            <label for="Year">Year of Passing *:</label>
+            <input type="number" min="2022" max="2026" step="1" placeholder="Year" id="Year" name="Year" required>
+            <br>
+            <br>
+            <label for="Aggregate">Aggregate Percentage / CGPA Marks*:</label>
+            <input type="number" min="35" max="100" step="0.05" id="Aggregate" name="Aggregate" placeholder="eg. 94.5" required>
+            <br>
+            <br>
+            <h2>Uploads & Extras</h2>
+            <br>
+            <label for="Upload">Upload Consolidated Marksheet (PDF/JPG format) *:</label>
+            <input type="file" id="Upload" name="Upload" required>
+            <br>
+            <br>
+            <label for="NCC">NCC</label>
+            <input type="checkbox" value="NCC" id="NCC" name="skills">
+            <br>
+            <br>
+            <label for="Robotics">Robotics & Astronomy Club</label>
+            <input type="checkbox" value="robotics" id="Robotics" name="skills">
+            <br>
+            <br>
+            <label for="Sports">Inter-College Sports & Athletics</label>
+            <input type="checkbox" id="Sports" name="skills" value="Sports">
+            <br>
+            <br>
+            <h2>Form Close, Declaration</h2>
+            <br>
+            <label for="consent"><p>I solemnly affirm that the data filled in this digital form matches my legal documents. If any discrepancy is found, SRTI holds the right to cancel my admission instantly.</p></label>
+            <input type="checkbox" id="consent" required>
+            <br>
+            <br>
+            <input type="submit" value="Register & Apply Now">
+            <br>
+            <br>
+            <input type="reset" value="Reset Application Form">
+            <br>
+            <br>
+            <a href="https://srti-admissions.edu" target="_blank">Download Detailed Information Brochure (PDF)</a>
+
+
+        </form>
+
+
+    </body>
+</html>
