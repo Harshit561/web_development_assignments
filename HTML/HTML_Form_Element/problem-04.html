@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Employee Leave Request Form</title>
+</head>
+<body>
+<h1>Employee Leave Request Form</h1>
+<p>
+<label for="empName">Employee Name:</label>
+<input type="text" id="empName" name="employee_name">
+</p>
+<p>
+<label for="empID">Employee ID (Required):</label>
+<input type="text" id="empID" name="employee_id" required>
+</p>
+<p>
+<label for="empEmail">Email Address:</label>
+<input type="email" id="empEmail" name="employee_email">
+</p>
+<p>
+<label for="dept">Department:</label>
+<select id="dept" name="department">
+<option value="">--Select Department--</option>
+<option value="HR">Human Resources</option>
+<option value="IT">Information Technology</option>
+<option value="Finance">Finance</option>
+<option value="Marketing">Marketing</option>
+<option value="Sales">Sales</option>
+<option value="Operations">Operations</option>
+</select>
+</p>
+<p>
+<label for="leaveType">Leave Type:</label>
+<select id="leaveType" name="leave_type">
+<option value="Casual">Casual Leave</option>
+<option value="Sick">Sick Leave</option>
+<option value="Earned">Earned Leave</option>
+<option value="WFH">Work From Home</option>
+<option value="Other">Other</option>
+</select>
+</p>
+<p>
+<label for="startDate">Start Date:</label>
+<input type="date" id="startDate" name="start_date">
+</p>
+<p>
+<label for="endDate">End Date:</label>
+<input type="date" id="endDate" name="end_date">
+</p>
+<p>
+<label for="leaveDays">Number of Leave Days:</label>
+<input type="number" id="leaveDays" name="leave_days" min="1" max="30" step="1">
+</p>
+<p>
+<label>Are you reachable during leave?</label><br>
+<input type="radio" id="reachYes" name="reachable" value="Yes" checked>
+<label for="reachYes">Yes</label><br>
+<input type="radio" id="reachNo" name="reachable" value="No">
+<label for="reachNo">No</label>
+</p>
+<p>
+<label for="reason">Reason for Leave:</label><br>
+<textarea id="reason" name="leave_reason" rows="4" cols="40"></textarea>
+</p>
+<p>
+<label for="altContact">Alternate Contact Number:</label>
+<input type="tel" id="altContact" name="alternate_contact">
+</p>
+<p>
+<label for="supportDoc">Upload Supporting Document (Optional):</label>
+<input type="file" id="supportDoc" name="supporting_document">
+</p>
+<p>
+<label for="formStatus">Form Status:</label>
+<input type="text" id="formStatus" name="status" value="Pending Approval" readonly>
+</p>
+<p>
+<input type="checkbox" id="declare" name="declaration" required>
+<label for="declare">I confirm that the above information is correct.</label>
+</p>
+<p>
+<input type="submit" value="Submit">
+<input type="reset" value="Reset">
+</p>
+</form>
+<br><hr><br>
+<h2>Leave Categories and Descriptions</h2>
+<table border="1">
+<thead>
+<tr>
+<th>Leave Category</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Casual Leave</td>
+<td>For urgent personal work</td>
+</tr>
+<tr>
+<td>Sick Leave</td>
+<td>For medical reasons and illness</td>
+</tr>
+<tr>
+<td>Earned Leave</td>
+<td>Planned holidays and vacations</td>
+</tr>
+<tr>
+<td>Work From Home</td>
+<td>Working remotely from home</td>
+</tr>
+<tr>
+<td>Other</td>
+<td>Special leaves or unlisted types</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

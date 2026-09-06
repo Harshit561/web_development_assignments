@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head><title>TechAcademy - Online Course Enrollment Form</title></head>
+    <body>
+        <h1>TechAcademy - Online Course Enrollment Form</h1>
+        <p>Register today to jumpstart your career in tech. Please fill out your academic and course preferences below.</p>
+        <br>
+        <form>
+            <label for="Name">Full Name:</label>
+            <input type="text" id="Name" name="Name" placeholder="John Brittos" required>
+            <br>
+            <br>
+            <label for="Email">Email:</label>
+            <input type="email" id="Email" name="Email" placeholder="johnbrittos@email.com" required>
+            <br>
+            <br>
+            <label for="Pass">Password:</label>
+            <input type="password" id="Pass" name="Password" placeholder="123456" pattern="[0-9]{6}" maxlength="6" required>
+            <br>
+            <br>
+            <label for="Mob">Mobile Number:</label>
+            <input type="tel" id="Mob" name="Mobile no." pattern="[1-9]{1}[0-9]{9}" placeholder="9898980990" maxlength="10" required>
+            <br>
+            <br>
+            <label for="DOB">Date of Birth:</label>
+            <input type="date" id="DOB" name="DOB" required>
+            <br>
+            <br>
+            <label for="Select">Select Course to Enroll:</label>
+            <select id="Select" name="Course">
+                <option value="Full Stack Web Development">Full Stack Web Development</option>
+                <option value="Data Science & Machine Learning">Data Science & Machine Learning</option>
+                <option value="Python Programming Masterclass">Python Programming Masterclass</option>
+                <option value="Java Enterprise Edition">Java Enterprise Edition</option>
+                <option value="Data Structures & Algorithms">Data Structures & Algorithms</option>
+                <option value="Database Management Systems">Database Management Systems</option>
+            </select>
+            <br>
+            <br>
+            <label for="Batch">Select Preferred Batch:</label>
+            <select id="Batch" name="Batch">
+                <option value="Morning Batch (09:00 AM - 11:00 AM)">Morning Batch (09:00 AM - 11:00 AM)</option>
+                <option value="Afternoon Batch (02:00 PM - 04:00 PM)">Afternoon Batch (02:00 PM - 04:00 PM)</option>
+                <option value="Evening Batch (06:00 PM - 08:00 PM)">Evening Batch (06:00 PM - 08:00 PM)</option>
+                <option value="Weekend Batch (Saturday & Sunday)">Weekend Batch (Saturday & Sunday)</option>        
+            </select>
+            <br>
+            <br>
+            <label for="Mode">Mode</label>
+            <br>
+            <br>
+            <label for="Offline">Offline (On-Campus)</label>
+            <input type="radio" id="offline" name="mode" value="offline">
+            <br>
+            <br>
+            <label for="Online">Online (Live Classes)</label>
+            <input type="radio" id="online" name="mode" value="online">
+            <br>
+            <br>
+            <label for="Hybrid">Hybrid (Mix of Both)</label>
+            <input type="radio" id="Hybrid" name="mode" value="Hybrid">
+            <br>
+            <br>
+            <label for=" Interest"> Areas of Interest / Prior Knowledge:</label>
+            <br>
+            <label for="Java">Java</label>
+            <input type="checkbox" id="Java" name="Interest">
+            <br>
+            <br>
+            <label for="Python">Python</label>
+            <input type="checkbox" id="Python" name="Interest">
+            <br>
+            <br>
+            <label for="Web Development">Web Development</label>
+            <input type="checkbox" id="Web Development" name="Interest">
+            <br>
+            <br>
+            <label for="DS">Data Structures</label>
+            <input type="checkbox" id="DS" name="Interest">
+            <br>
+            <br>
+            <label for="Database">Database</label>
+            <input type="checkbox" id="Database" name="Interest">
+            <br>
+            <br>
+            <label for="College">College / Institution Name:</label>
+            <input type="text" placeholder=e.g. XYZ Institute of Technology id="College" name="college">
+            <br>
+            <br>
+            <label for="Semester">Current Semester/Year:</label>
+            <input type="text" placeholder=e.g. 3rd Semester / 2nd Year id="Semester" name="Semester">
+            <br>
+            <br>
+            <label for="Experience">Years of Programming Experience:</label>
+            <input type="text" placeholder="0" min="0" max="10" step="1" id="Experience" name="Experience">
+            <br>
+            <br>
+            <label for="Github Profile">Github Profile</label>
+            <br>
+            <a href="https://github.com">Github</a>
+            <br>
+            <br>
+            <label for="Question">What are your learning goals for this course?</label>
+            <textarea rows="4" cols="200" id="Question" placeholder="Tell us what you want to achieve..."></textarea>
+            <label for="confirm"> I confirm that all the provided academic and personal information is accurate.</label>
+            <input type="checkbox" id="confirm" required>
+            <br>
+            <br>
+            <input type="submit" value="Complete Registration">
+            <br>
+            <input type="reset" value="Reset Fields">
+            <br>
+        </form>
+        <a href="www.wikipedia.org">Click here to download the complete Course Curriculum and Syllabus.</a>
+    <br>
+    <br>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToERlUsNJXRcA3pXA7Y2g_MQUFnOrZcvcl6AYAIFEGzQ&s=10" alt="Students coding in a high-tech classroom lab">
+    </body>
+</html>
