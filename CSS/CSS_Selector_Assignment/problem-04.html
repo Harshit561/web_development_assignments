@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Problem 4 - Interactive Periodic Table</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #ffffff;
+            padding: 40px 20px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            color: #222;
+        }
+        .table-container {
+            max-width: 950px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            align-items: center;
+        }
+        .main-grid {
+            display: grid;
+            grid-template-columns: repeat(18, 35px);
+            grid-template-rows: repeat(7, 35px);
+            gap: 5px;
+        }
+        .elem {
+            width: 35px;
+            height: 35px;
+            border-radius: 2px;
+            border: 1px solid #777;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: bold;
+            color: #333;
+        }
+        .empty {
+            border: none;
+        }
+        
+        /* Color themes based on reference */
+        .col-red { background-color: #d32f2f; color: white; border-color: #b71c1c; }
+        .col-lightgreen { background-color: #8bc34a; }
+        .col-darkgreen { background-color: #4caf50; }
+        .col-orange { background-color: #ff9800; }
+        .col-blue { background-color: #0022ff; color: white; }
+        .col-pink { background-color: #e91e63; }
+        .col-purple { background-color: #9c27b0; }
+        .col-yellow { background-color: #ffeb3b; }
+        .col-grey { background-color: #607d8b; }
+        .col-brown { background-color: #795548; }
+
+        /* Highlight box for Silicon */
+        .elem-si {
+            grid-column: 14;
+            grid-row: 3;
+            width: 75px;
+            height: 75px;
+            background-color: #8bc34a;
+            border: 2px solid #333;
+            position: relative;
+            display: block;
+            padding: 5px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            z-index: 10;
+            transform: translate(-15px, -15px);
+        }
+        .elem-si .num {
+            position: absolute;
+            top: 2px;
+            right: 5px;
+            font-size: 11px;
+            color: #333;
+        }
+        .elem-si .sym {
+            font-size: 24px;
+            font-weight: bold;
+            color: #222;
+            margin-top: 5px;
+            display: block;
+            text-align: left;
+        }
+        .elem-si .name {
+            font-size: 10px;
+            color: #444;
+            display: block;
+            text-align: left;
+            margin-top: 2px;
+        }
+
+        /* Bottom Row Lanthanides/Actinides */
+        .bottom-row {
+            display: grid;
+            grid-template-columns: 35px repeat(14, 35px);
+            gap: 5px;
+            margin-top: 10px;
+        }
+        .lanth-label {
+            background-color: #4f6d55;
+            color: white;
+            font-size: 9px;
+            border: 1px solid #333;
+        }
+        .bottom-elem {
+            background-color: #6b8e23;
+            border: 1px solid #555;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>THE PERIODIC TABLE OF ELEMENTS</h1>
+
+    <div class="table-container">
+        <div class="main-grid">
+            <!-- Row 1 -->
+            <div class="elem col-red">H</div>
+            <div class="empty" grid-span="16"></div>
+            <!-- loop fill placeholders mapping user layout -->
+            <div class="elem col-yellow" style="grid-column:18;"></div>
+
+            <!-- Row 2 -->
+            <div class="elem col-lightgreen" style="grid-row:2; grid-column:1;"></div>
+            <div class="elem col-orange" style="grid-row:2; grid-column:2;">4</div>
+            <div class="elem col-pink" style="grid-row:2; grid-column:13;"></div>
+            <div class="elem col-purple" style="grid-row:2; grid-column:14;"></div>
+            <div class="elem col-pink" style="grid-row:2; grid-column:15;"></div>
+            <div class="elem col-purple" style="grid-row:2; grid-column:16;"></div>
+            <div class="elem col-pink" style="grid-row:2; grid-column:17;"></div>
+            <div class="elem col-yellow" style="grid-row:2; grid-column:18;"></div>
+
+            <!-- Row 3 -->
+            <div class="elem col-lightgreen" style="grid-row:3; grid-column:1;"></div>
+            <div class="elem col-orange" style="grid-row:3; grid-column:2;">12</div>
+            <!-- Silicon Box sits here spanning columns dynamically -->
+            <div class="elem-si">
+                <span class="num">14</span>
+                <span class="sym">Si</span>
+                <span class="name">Silicon</span>
+            </div>
+            <div class="elem col-pink" style="grid-row:3; grid-column:15;"></div>
+            <div class="elem col-purple" style="grid-row:3; grid-column:16;"></div>
+            <div class="elem col-pink" style="grid-row:3; grid-column:17;"></div>
+            <div class="elem col-yellow" style="grid-row:3; grid-column:18;"></div>
+
+            <!-- Row 4 -->
+            <div class="elem col-lightgreen" style="grid-row:4; grid-column:1;"></div>
+            <div class="elem col-orange" style="grid-row:4; grid-column:2;">20</div>
+            <div class="elem col-blue" style="grid-row:4; grid-column:3;"></div>
+            <div class="elem col-blue" style="grid-row:4; grid-column:4;"></div>
+            <div class="elem col-blue" style="grid-row:4; grid-column:5;"></div>
+            <div class="elem col-blue" style="grid-row:4; grid-column:6;"></div>
+            <div class="elem col-blue" style="grid-row:4; grid-column:7;"></div>
+            <div class="elem col-blue" style="grid-row:4; grid-column:8;"></div>
+            <div class="elem col-blue" style="grid-row:4; grid-column:9;"></div>
+            <div class="elem col-blue" style="grid-row:4; grid-column:10;"></div>
+            <div class="elem col-blue" style="grid-row:4; grid-column:11;"></div>
+            <div class="elem col-blue" style="grid-row:4; grid-column:12;"></div>
+            <div class="elem col-orange" style="grid-row:4; grid-column:13;"></div>
+            <div class="elem col-purple" style="grid-row:4; grid-column:14;"></div>
+            <div class="elem col-orange" style="grid-row:4; grid-column:15;"></div>
+            <div class="elem col-purple" style="grid-row:4; grid-column:16;"></div>
+            <div class="elem col-pink" style="grid-row:4; grid-column:17;"></div>
+            <div class="elem col-yellow" style="grid-row:4; grid-column:18;"></div>
+
+            <!-- Row 5 -->
+            <div class="elem col-lightgreen" style="grid-row:5; grid-column:1;"></div>
+            <div class="elem col-orange" style="grid-row:5; grid-column:2;">38</div>
+            <div class="elem col-blue" style="grid-row:5; grid-column:3;"></div>
+            <div class="elem col-blue" style="grid-row:5; grid-column:4;"></div>
+            <div class="elem col-blue" style="grid-row:5; grid-column:5;"></div>
+            <div class="elem col-blue" style="grid-row:5; grid-column:6;"></div>
+            <div class="elem col-blue" style="grid-row:5; grid-column:7;"></div>
+            <div class="elem col-blue" style="grid-row:5; grid-column:8;"></div>
+            <div class="elem col-blue" style="grid-row:5; grid-column:9;"></div>
+            <div class="elem col-blue" style="grid-row:5; grid-column:10;"></div>
+            <div class="elem col-blue" style="grid-row:5; grid-column:11;"></div>
+            <div class="elem col-blue" style="grid-row:5; grid-column:12;"></div>
+            <div class="elem col-orange" style="grid-row:5; grid-column:13;"></div>
+            <div class="elem col-purple" style="grid-row:5; grid-column:14;"></div>
+            <div class="elem col-orange" style="grid-row:5; grid-column:15;"></div>
+            <div class="elem col-purple" style="grid-row:5; grid-column:16;"></div>
+            <div class="elem col-pink" style="grid-row:5; grid-column:17;"></div>
+            <div class="elem col-yellow" style="grid-row:5; grid-column:18;"></div>
+
+            <!-- Row 6 -->
+            <div class="elem col-lightgreen" style="grid-row:6; grid-column:1;"></div>
+            <div class="elem col-orange" style="grid-row:6; grid-column:2;">56</div>
+            <div class="elem" style="grid-row:6; grid-column:3;"></div>
+            <div class="elem col-blue" style="grid-row:6; grid-column:4;"></div>
+            <div class="elem col-blue" style="grid-row:6; grid-column:5;"></div>
+            <div class="elem col-blue" style="grid-row:6; grid-column:6;"></div>
+            <div class="elem col-blue" style="grid-row:6; grid-column:7;"></div>
+            <div class="elem col-blue" style="grid-row:6; grid-column:8;"></div>
+            <div class="elem col-blue" style="grid-row:6; grid-column:9;"></div>
+            <div class="elem col-blue" style="grid-row:6; grid-column:10;"></div>
+            <div class="elem col-blue" style="grid-row:6; grid-column:11;"></div>
+            <div class="elem col-blue" style="grid-row:6; grid-column:12;"></div>
+            <div class="elem col-orange" style="grid-row:6; grid-column:13;"></div>
+            <div class="elem col-purple" style="grid-row:6; grid-column:14;"></div>
+            <div class="elem col-orange" style="grid-row:6; grid-column:15;"></div>
+            <div class="elem col-purple" style="grid-row:6; grid-column:16;"></div>
+            <div class="elem col-pink" style="grid-row:6; grid-column:17;"></div>
+            <div class="elem col-yellow" style="grid-row:6; grid-column:18;"></div>
+
+            <!-- Row 7 -->
+            <div class="elem col-lightgreen" style="grid-row:7; grid-column:1;"></div>
+            <div class="elem col-orange" style="grid-row:7; grid-column:2;">88</div>
+            <div class="elem" style="grid-row:7; grid-column:3;"></div>
+            <div class="elem col-blue" style="grid-row:7; grid-column:4;"></div>
+            <div class="elem col-blue" style="grid-row:7; grid-column:5;"></div>
+            <div class="elem col-blue" style="grid-row:7; grid-column:6;"></div>
+            <div class="elem col-blue" style="grid-row:7; grid-column:7;"></div>
+            <div class="elem col-blue" style="grid-row:7; grid-column:8;"></div>
+            <div class="elem col-blue" style="grid-row:7; grid-column:9;"></div>
+            <div class="elem col-blue" style="grid-row:7; grid-column:10;"></div>
+            <div class="elem col-blue" style="grid-row:7; grid-column:11;"></div>
+            <div class="elem col-blue" style="grid-row:7; grid-column:12;"></div>
+            <div class="elem col-grey" style="grid-row:7; grid-column:13;"></div>
+            <div class="elem col-grey" style="grid-row:7; grid-column:14;"></div>
+            <div class="elem col-grey" style="grid-row:7; grid-column:15;"></div>
+            <div class="elem col-grey" style="grid-row:7; grid-column:16;"></div>
+            <div class="elem col-grey" style="grid-row:7; grid-column:17;"></div>
+            <div class="elem col-brown" style="grid-row:7; grid-column:18;"></div>
+        </div>
+
+        <!-- Bottom Rows for Lanthanides/Actinides -->
+        <div class="bottom-row">
+            <div class="elem lanth-label">La</div>
+            <div class="elem bottom-elem"></div>
+            <div class="elem bottom-elem"></div>
+            <div class="elem bottom-elem"></div>
+            <div class="elem bottom-elem"></div>
+            <div class="elem bottom-elem"></div>
+            <div class="elem bottom-elem"></div>
+            <div class="elem bottom-elem">Am</div>
+            <div class="elem bottom-elem"></div>
+            <div class="elem bottom-elem"></div>
+            <div class="elem bottom-elem"></div>
+            <div class="elem bottom-elem"></div>
+            <div class="elem bottom-elem"></div>
+            <div class="elem bottom-elem"></div>
+            <div class="elem bottom-elem" style="background-color: #555; color: white;">No</div>
+        </div>
+    </div>
+
+</body>
+</html>

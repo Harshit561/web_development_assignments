@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Problem 2 - Hotel Rooms & Suites</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', serif;
+        }
+        body {
+            background-color: #fbfbf9;
+            padding: 50px 20px;
+        }
+        #rooms-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .main-heading {
+            font-size: 36px;
+            color: #c49b63;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+        .section-desc {
+            font-size: 14px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            line-height: 1.6;
+        }
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .room-card {
+            background: #ffffff;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            padding-bottom: 20px;
+        }
+        .room-image-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: #eaeaea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 14px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .room-name {
+            font-size: 18px;
+            color: #222;
+            margin: 20px 0 10px 0;
+            font-weight: bold;
+        }
+        .room-price {
+            font-size: 12px;
+            color: #c49b63;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="rooms-section">
+        <h1 class="main-heading">Rooms & Suites</h1>
+        <p class="section-desc">
+            Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+        </p>
+        
+        <div class="rooms-grid">
+            <div class="room-card">
+                <div class="room-image-placeholder" style="background-color: #d1e3dd;">Single Room Image</div>
+                <div class="room-name">Single Room</div>
+                <div class="room-price">$90 / PER NIGHT</div>
+            </div>
+            
+            <div class="room-card">
+                <div class="room-image-placeholder" style="background-color: #e2d9db;">Family Room Image</div>
+                <div class="room-name">Family Room</div>
+                <div class="room-price">$120 / PER NIGHT</div>
+            </div>
+            
+            <div class="room-card">
+                <div class="room-image-placeholder" style="background-color: #d9e2e5;">Presidential Room Image</div>
+                <div class="room-name">Presidential Room</div>
+                <div class="room-price">$250 / PER NIGHT</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
